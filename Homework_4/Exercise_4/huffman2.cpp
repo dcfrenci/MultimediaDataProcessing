@@ -40,7 +40,9 @@ struct bit_reader {
 struct bit_writer {
     std::ostream &output_;
     uint8_t buffer_, size_;
-    explicit bit_writer(std::ostream &output) : output_(output), buffer_(0), size_(0) {}
+
+    explicit bit_writer(std::ostream &output) : output_(output), buffer_(0), size_(0) {
+    }
 
     void write_bit(const uint8_t bit) {
         if (size_ == 8) {
@@ -63,7 +65,10 @@ void compress(std::istream &input, std::ostream &output) {
         std::istream_iterator<uint8_t>{input},
         std::istream_iterator<uint8_t>{}
     };
-    auto frequencies = std::for_each(chars.begin(), chars.end(), [](const uint8_t c, std::unordered_map<uint8_t, uint32_t> &map){return map[c]++;});
+    std::map<uint8_t, uint32_t> frequency_map;
+    std::for_each(chars.begin(), chars.end(), [&frequency_map](const auto &character) { ++frequency_map[character]; });
+
+    
 }
 
 void decompress(std::istream &input, std::ostream &output) {

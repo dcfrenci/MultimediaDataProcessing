@@ -21,4 +21,8 @@ add_executable(Lab main.cpp
         Homework_4/Exercise_2/packbits_extension.cpp
         Homework_4/Exercise_3/huffman1.cpp
         Homework_4/Exercise_4/huffman2.cpp
-        Homework_4/Exercise_3/Lab_version_v1.cpp)
+        Homework_4/Exercise_3/Lab_version_v1.cpp
+        Homework_5/Exercise_1/gradient.cpp
+        Homework_5/Exercise_1/main.cpp
+        Homework_5/Exercise_2/main.cpp
+        Homework_5/Exercise_3/main.cpp)
