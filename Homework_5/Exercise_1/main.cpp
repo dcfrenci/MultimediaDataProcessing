@@ -3,16 +3,7 @@
 #include <array>
 
 int gradient(std::ofstream &out) {
-    //header
-    out << "P7\n";
-    out << "WIDTH 256\n";
-    out << "HEIGHT 256\n";
-    out << "DEPTH 1\n";
-    out << "MAXVAL 255\n";
-    out << "TUPLTYPE GRAYSCALE\n";
-    out << "ENDHDR\n";
-
-    //content
+    out << "P7\n" << "WIDTH 256\n" << "HEIGHT 256\n" << "DEPTH 1\n" << "MAXVAL 255\n" << "TUPLTYPE GRAYSCALE\n" << "ENDHDR\n";
     std::array<char, 256> v{};
     for (uint32_t i = 0; i < 256; i++) {
         v.fill(static_cast<char>(i));

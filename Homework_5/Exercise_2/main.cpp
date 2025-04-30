@@ -31,7 +31,7 @@ int reverse(std::ifstream &input, std::ofstream &output) {
         output << element;
     }
     while (!lines.empty()) {
-        output.write(lines.back().data(), height);
+        output.write(lines.back().data(), width);
         lines.pop_back();
     }
     return 0;

@@ -6,34 +6,37 @@
 
 int mirror(std::ifstream &input, std::ofstream &output) {
     std::vector<std::string> header;
-    uint32_t width = 0, height = 0;
-    for (uint8_t i = 0; i < 7; i++) {
-        char c = 0;
+    uint32_t width = 0, height = 0, depth = 0;
+    while (header.empty() or header.back().find("ENDHDR") == std::string::npos) {
         std::string string;
-        while (c != '\n') {
-            input.read(&c, 1);
-            string.push_back(c);
-        }
+        std::getline(input, string);
+        header.push_back(string);
         if (string.find("WIDTH") != std::string::npos) {
             width = std::stoi(string.substr(6));
         }
         if (string.find("HEIGHT") != std::string::npos) {
             height = std::stoi(string.substr(7));
         }
-        header.push_back(string);
+        if (string.find("DEPTH") != std::string::npos) {
+            depth = std::stoi(string.substr(6));
+        }
     }
-    std::vector<std::vector<char>> lines;
+    std::vector<std::vector<std::vector<char>>> lines;
     for (uint32_t line = 0; line < height; line++) {
-        std::vector<char> vector(width);
-        input.read(vector.data(), width);
-        lines.push_back(vector);
+        std::vector row(width, std::vector<char>(depth));
+        for (uint32_t pixel = 0; pixel < width; pixel++) {
+            input.read(row[pixel].data(), depth);
+        }
+        lines.push_back(row);
     }
     for (auto &element : header) {
-        output << element;
+        output << element << "\n";
     }
-    for (auto &element : lines) {
-        std::reverse(element.begin(), element.end());
-        output.write(element.data(), height);
+    for (auto &pixels : lines) {
+        std::reverse(pixels.begin(), pixels.end());
+        for (auto &pixel : pixels) {
+            output.write(pixel.data(), depth);
+        }
     }
     return 0;
 }
