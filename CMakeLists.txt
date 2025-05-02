@@ -26,4 +26,5 @@ add_executable(Lab main.cpp
         Homework_5/Exercise_1/main.cpp
         Homework_5/Exercise_2/main.cpp
         Homework_5/Exercise_3/main.cpp
-        Homework_6/Exercise_1/split.cpp)
+        Homework_6/Exercise_1/split.cpp
+        Homework_6/Exercise_2/combine.cpp)
