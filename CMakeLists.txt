@@ -27,4 +27,9 @@ add_executable(Lab main.cpp
         Homework_5/Exercise_2/main.cpp
         Homework_5/Exercise_3/main.cpp
         Homework_6/Exercise_1/split.cpp
-        Homework_6/Exercise_2/combine.cpp)
+        Homework_6/Exercise_2/combine.cpp
+        Homework_6/Exercise_3/huffdiff.cpp
+        Homework_7/Inheritance/canvas_c_version.h
+        Homework_7/Inheritance/canvas_c_version.c
+        Homework_7/Inheritance/shape_c_version_1.c
+        Homework_7/Inheritance/shape_c_version_2.c)
