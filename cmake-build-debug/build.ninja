@@ -193,6 +193,36 @@ build CMakeFiles/Lab.dir/Homework_6/Exercise_1/split.cpp.obj: CXX_COMPILER__Lab_
   OBJECT_DIR = CMakeFiles\Lab.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_6\Exercise_1
 
+build CMakeFiles/Lab.dir/Homework_6/Exercise_2/combine.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Homework_6/Exercise_2/combine.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Homework_6\Exercise_2\combine.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_6\Exercise_2
+
+build CMakeFiles/Lab.dir/Homework_6/Exercise_3/huffdiff.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Homework_6/Exercise_3/huffdiff.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Homework_6\Exercise_3\huffdiff.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_6\Exercise_3
+
+build CMakeFiles/Lab.dir/Homework_7/Inheritance/canvas_c_version.c.obj: C_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Homework_7/Inheritance/canvas_c_version.c || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Homework_7\Inheritance\canvas_c_version.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_7\Inheritance
+
+build CMakeFiles/Lab.dir/Homework_7/Inheritance/shape_c_version_1.c.obj: C_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Homework_7/Inheritance/shape_c_version_1.c || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Homework_7\Inheritance\shape_c_version_1.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_7\Inheritance
+
+build CMakeFiles/Lab.dir/Homework_7/Inheritance/shape_c_version_2.c.obj: C_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Homework_7/Inheritance/shape_c_version_2.c || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Homework_7\Inheritance\shape_c_version_2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Homework_7\Inheritance
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab
@@ -201,7 +231,7 @@ build CMakeFiles/Lab.dir/Homework_6/Exercise_1/split.cpp.obj: CXX_COMPILER__Lab_
 #############################################
 # Link the executable Lab.exe
 
-build Lab.exe: CXX_EXECUTABLE_LINKER__Lab_Debug CMakeFiles/Lab.dir/main.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_2/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_3/Lab_version_3.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_4/Lab_version_4.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_5/Lab_version_5.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homework_3/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_3/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v0.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_2/Exercise_2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_2/packbits_extension.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_3/huffman1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_4/huffman2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_3/Lab_version_v1.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_1/gradient.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_1/main.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_2/main.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_3/main.cpp.obj CMakeFiles/Lab.dir/Homework_6/Exercise_1/split.cpp.obj
+build Lab.exe: CXX_EXECUTABLE_LINKER__Lab_Debug CMakeFiles/Lab.dir/main.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_2/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_3/Lab_version_3.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_4/Lab_version_4.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_5/Lab_version_5.cpp.obj CMakeFiles/Lab.dir/Homework_2/Exercise_1/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homework_3/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_3/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_1/Exercise_1_v0.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_2/Exercise_2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_2/packbits_extension.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_3/huffman1.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_4/huffman2.cpp.obj CMakeFiles/Lab.dir/Homework_4/Exercise_3/Lab_version_v1.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_1/gradient.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_1/main.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_2/main.cpp.obj CMakeFiles/Lab.dir/Homework_5/Exercise_3/main.cpp.obj CMakeFiles/Lab.dir/Homework_6/Exercise_1/split.cpp.obj CMakeFiles/Lab.dir/Homework_6/Exercise_2/combine.cpp.obj CMakeFiles/Lab.dir/Homework_6/Exercise_3/huffdiff.cpp.obj CMakeFiles/Lab.dir/Homework_7/Inheritance/canvas_c_version.c.obj CMakeFiles/Lab.dir/Homework_7/Inheritance/shape_c_version_1.c.obj CMakeFiles/Lab.dir/Homework_7/Inheritance/shape_c_version_2.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab.dir
