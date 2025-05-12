@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <fstream>
 #include <memory>
-#include <string.h>
+#include <cstring>
 #include <unordered_map>
 #include <vector>
 
@@ -81,17 +81,17 @@ int compress(std::ifstream &input, std::ofstream &output) {
         if (string.find("DEPTH") != std::string::npos)
             depth = std::stoi(string.substr(6));
     }
-    std::vector<std::vector<uint16_t> > lines;
-    std::unordered_map<uint16_t, uint32_t> pixels;
+    std::vector<std::vector<int16_t> > lines;
+    std::unordered_map<int16_t, uint32_t> pixels;
     for (uint32_t line = 0; line < height; line++) {
-        std::vector<uint16_t> row;
+        std::vector<int16_t> row;
         for (uint32_t pixel = 0; pixel < width; pixel++) {
             uint8_t bit;
             input.read(reinterpret_cast<std::istream::char_type *>(&bit), 1);
             if (pixel != 0) {
-                row.push_back(bit - row.at(pixel - 1));
+                row.push_back(static_cast<int16_t>(bit - row.at(pixel - 1)));
             } else if (line != 0) {
-                row.push_back(bit - lines[line - 1][0]);
+                row.push_back(static_cast<int16_t>(bit - lines[line - 1][0]));
             } else {
                 row.push_back(bit);
             }
@@ -100,33 +100,34 @@ int compress(std::ifstream &input, std::ofstream &output) {
         lines.push_back(row);
     }
 
-    for (auto &element : header) {
+    for (auto &element: header) {
         output << element << "\n";
     }
     for (uint32_t line = 0; line < height; line++) {
         for (uint32_t column = 0; column < width; column++) {
-            uint8_t pixel = std::floor(lines.at(line).at(column) / 2) + 128;
+            uint8_t pixel = static_cast<uint8_t>(std::floor(lines.at(line).at(column) / 2)) + 128;
             output.write(reinterpret_cast<const std::ostream::char_type *>(&pixel), 1);
         }
     }
 
-    // std::vector<node> nodes;
-    // for (auto &[first, second]: pixels) {
-    //     nodes.push_back(node(second, first));
-    // }
-    //
-    // while (nodes.size() != 1) {
-    //     std::sort(nodes.begin(), nodes.end(), [](node const &n1, node const &n2) {
-    //         return n1.frequency_ > n2.frequency_;
-    //     });
-    //     auto n1 = nodes.back();
-    //     nodes.pop_back();
-    //     auto n2 = nodes.back();
-    //     nodes.pop_back();
-    //     nodes.push_back(node(&n1, &n2));
-    // }
-    //
-    // bit_writer writer(output);
+    std::vector<node> nodes;
+    nodes.reserve(pixels.size());
+    for (auto &[first, second]: pixels) {
+        nodes.emplace_back(second, first);
+    }
+
+    while (nodes.size() != 1) {
+        std::sort(nodes.begin(), nodes.end(), [](node const &n1, node const &n2) {
+            return n1.frequency_ > n2.frequency_;
+        });
+        auto n1 = nodes.back();
+        nodes.pop_back();
+        auto n2 = nodes.back();
+        nodes.pop_back();
+        nodes.emplace_back(&n1, &n2);
+    }
+
+    bit_writer writer(output);
     // output << "HUFFDIFF";
     // writer.write(width, 32, true);
     // writer.write(height, 32, true);

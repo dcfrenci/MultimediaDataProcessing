@@ -3,7 +3,6 @@
 #include <fstream>
 #include <iosfwd>
 #include <iostream>
-#include <cstring>
 #include <vector>
 
 bool replace_range(const char c) {
@@ -32,45 +31,31 @@ void recursive(std::ifstream &input, const uint32_t level, const bool dictionary
         return;
     }
     const std::string string = key? " => " : input.tellg() == 1? std::string(level, '\t') : "\n" + std::string(level, '\t');
+    std::cout << string;
     if (dictionary) {
         key = !key;
     }
-    std::cout << string;
     if (c == 'i') {
-        //integer
         std::cout << read_int(input);
     } else if (c == 'l') {
-        //list
         std::cout << "[";
         recursive(input, level + 1, false, key, false);
         std::cout << "\n" + std::string(level, '\t') + "]";
     } else if (c == 'd') {
-        //dictionary
         std::cout << "{";
         recursive(input, level + 1, true, key, false);
         std::cout << "\n" + std::string(level, '\t') + "}";
     } else {
-        //string
         if (pieces) {
-            std::cout << '\n';
             std::vector<uint8_t> hex(20);
             std::string dim;
             std::getline(input, dim, ':');
             const uint32_t max = std::stoi(std::string(1, c) + dim);
             for (uint32_t i = 0; i < max; i += 20) {
                 input.read(reinterpret_cast<std::istream::char_type *>(hex.data()), 20);
-                // std::cout << std::string(level + 1, '\t') << std::hex << hex.data() << '\n';
-                std::cout << std::string(level + 1, '\t');
-                for (uint32_t k = 0; k < 20; ++k) {
-                    if (hex[k] <= 15) {
-                        std::cout << 0;
-                    }
-                    std::cout << std::hex << static_cast<int>(hex[k]);
+                std::cout << '\n' + std::string(level + 1, '\t');
+                std::for_each(hex.begin(), hex.end(), [](const uint32_t value) {value <= 15? std::cout << '0' << std::hex << value : std::cout << std::hex << value;});
                 }
-                if (i < max - 20) {
-                    std::cout << '\n';
-                }
-            }
             pieces = false;
         } else {
             const std::string str = read_string(input, c);

@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.30)
 project(Lab)
 
-set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 add_executable(Lab main.cpp
         Homeworks/Homework_2/Exercise_1/Exercise_1.cpp
