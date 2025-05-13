@@ -34,4 +34,6 @@ add_executable(Lab main.cpp
         Homeworks/Homework_7/Inheritance/canvas_c_version.c
         Homeworks/Homework_7/Inheritance/shape_c_version_1.c
         Homeworks/Homework_7/Inheritance/shape_c_version_2.c
-        Exams/Bit_torrent/torrent.cpp)
+        Exams/Bit_torrent/torrent.cpp
+        Exams/18_Decode_HDR_image/main.cpp
+        Exams/18_Decode_HDR_image/main_chat.cpp)
