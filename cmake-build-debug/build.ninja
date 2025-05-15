@@ -241,6 +241,36 @@ build CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main_chat.cpp.obj: CXX_COMPIL
   OBJECT_DIR = CMakeFiles\Lab.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\18_Decode_HDR_image
 
+build CMakeFiles/Lab.dir/Exams/19_BMP/main.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Exams/19_BMP/main.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Exams\19_BMP\main.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\19_BMP
+
+build CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_8bit.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Exams/19_BMP/bmp2pam_8bit.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Exams\19_BMP\bmp2pam_8bit.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\19_BMP
+
+build CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_24bit.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Exams/19_BMP/bmp2pam_24bit.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Exams\19_BMP\bmp2pam_24bit.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\19_BMP
+
+build CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_4.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Exams/19_BMP/bmp2pam_4.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Exams\19_BMP\bmp2pam_4.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\19_BMP
+
+build CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_1bit.cpp.obj: CXX_COMPILER__Lab_unscanned_Debug C$:/Users/dcfre/CLionProjects/Multimedia$ Data$ Processing/Lab/Exams/19_BMP/bmp2pam_1bit.cpp || cmake_object_order_depends_target_Lab
+  DEP_FILE = CMakeFiles\Lab.dir\Exams\19_BMP\bmp2pam_1bit.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab.dir\Exams\19_BMP
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab
@@ -249,7 +279,7 @@ build CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main_chat.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable Lab.exe
 
-build Lab.exe: CXX_EXECUTABLE_LINKER__Lab_Debug CMakeFiles/Lab.dir/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_2/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_3/Lab_version_3.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_4/Lab_version_4.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_5/Lab_version_5.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_3/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_3/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v0.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_2/Exercise_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_2/packbits_extension.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_3/huffman1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_4/huffman2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_3/Lab_version_v1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_1/gradient.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_1/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_2/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_3/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_1/split.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_2/combine.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_3/huffdiff.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/canvas_c_version.c.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/shape_c_version_1.c.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/shape_c_version_2.c.obj CMakeFiles/Lab.dir/Exams/Bit_torrent/torrent.cpp.obj CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main.cpp.obj CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main_chat.cpp.obj
+build Lab.exe: CXX_EXECUTABLE_LINKER__Lab_Debug CMakeFiles/Lab.dir/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_2/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_3/Lab_version_3.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_4/Lab_version_4.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_5/Lab_version_5.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_2/Exercise_1/Lab_version_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_3/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_3/Exercise_1/Lab_version_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_1/Exercise_1_v0.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_2/Exercise_2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_2/packbits_extension.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_3/huffman1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_4/huffman2.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_4/Exercise_3/Lab_version_v1.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_1/gradient.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_1/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_2/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_5/Exercise_3/main.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_1/split.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_2/combine.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_6/Exercise_3/huffdiff.cpp.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/canvas_c_version.c.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/shape_c_version_1.c.obj CMakeFiles/Lab.dir/Homeworks/Homework_7/Inheritance/shape_c_version_2.c.obj CMakeFiles/Lab.dir/Exams/Bit_torrent/torrent.cpp.obj CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main.cpp.obj CMakeFiles/Lab.dir/Exams/18_Decode_HDR_image/main_chat.cpp.obj CMakeFiles/Lab.dir/Exams/19_BMP/main.cpp.obj CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_8bit.cpp.obj CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_24bit.cpp.obj CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_4.cpp.obj CMakeFiles/Lab.dir/Exams/19_BMP/bmp2pam_1bit.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab.dir
