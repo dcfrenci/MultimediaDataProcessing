@@ -41,4 +41,6 @@ add_executable(Lab main.cpp
         Exams/19_BMP/bmp2pam_8bit.cpp
         Exams/19_BMP/bmp2pam_24bit.cpp
         Exams/19_BMP/bmp2pam_4.cpp
-        Exams/19_BMP/bmp2pam_1bit.cpp)
+        Exams/19_BMP/bmp2pam_1bit.cpp
+        Exams/14_Z85rot/z85rot.cpp
+        Exams/TIFF/main.cpp)
