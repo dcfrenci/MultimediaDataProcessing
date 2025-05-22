@@ -35,7 +35,7 @@ bool y4m_extract_gray(const std::string &filename, std::vector<mat<uint8_t> > &f
         }
         string.push_back(ch);
     }
-    if (tag_field.find('C') != tag_field.end() and  tag_field['C'] != "420jpeg") {
+    if (tag_field.find('C') != tag_field.end() and tag_field['C'] != "420jpeg") {
         return false;
     }
     string = "";
@@ -47,7 +47,7 @@ bool y4m_extract_gray(const std::string &filename, std::vector<mat<uint8_t> > &f
         }
         input.read(y_frame.rawdata(), y_frame.rawsize());
         frames.push_back(y_frame);
-        input.seekg(y_frame.cols() / 4 * y_frame.rows() / 4, std::ios::cur);
+        input.seekg(y_frame.cols() * y_frame.rows(), std::ios::cur);
     }
     return true;
 }
@@ -63,7 +63,7 @@ int main(const int argc, const char *argv[]) {
     const std::string dir = argv[2];
     for (auto &frame: frames) {
         std::string string = dir + "/frame_" + std::to_string(id) + ".pgm";
-        save_pgm(string, frame, false);
+        // save_pgm(string, frame, false);
         id++;
     }
 }

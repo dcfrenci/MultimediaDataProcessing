@@ -43,4 +43,9 @@ add_executable(Lab main.cpp
         Exams/19_BMP/bmp2pam_4.cpp
         Exams/19_BMP/bmp2pam_1bit.cpp
         Exams/14_Z85rot/z85rot.cpp
-        Exams/TIFF/main.cpp)
+        Exams/TIFF/main.cpp
+        Exams/YUV4MPEG2/pgm.cpp
+        Exams/YUV4MPEG2/ppm.cpp
+        Exams/YUV4MPEG2/y4m_gray.cpp
+        Exams/YUV4MPEG2/y4m_color.cpp
+)
