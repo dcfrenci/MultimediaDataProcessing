@@ -1,12 +1,12 @@
 #include <fstream>
 #include "mat.h"
-#include "pgm.h"
 #include "types.h"
 #include "utils.h"
 #include <map>
 #include <vector>
+#include <bits/algorithmfwd.h>
 
-uint8_t fit(const uint8_t value, const uint8_t min, const uint8_t max) {
+uint8_t fit(const uint32_t value, const uint8_t min, const uint8_t max) {
     return value >= min and value <= max ? value : value < min ? min : max;
 }
 
@@ -57,55 +57,67 @@ bool y4m_extract_color(const std::string &filename, std::vector<mat<vec3b> > &fr
         input.read(cr_frame.rawdata(), cr_frame.rawsize());
 
         mat<vec3b> frame(height, width);
-        int32_t c_index = 0;
-        for (int32_t i = 0; i < y_frame.size(); i++) {
-            uint8_t y = fit(y_frame(i / width, i % width), 16, 235);
-            uint8_t cb = fit(cb_frame(c_index / (width / 2), c_index % (width / 2)), 16, 240);
-            uint8_t cr = fit(cr_frame(c_index / (width / 2), c_index % (width / 2)), 16, 240);
-            if (i % width == 0) {
-                c_index = i / width % 2 == 0 ? c_index : c_index - width / 2;
-            } else if (i % 2 != 0) {
-                c_index++;
+        for (int32_t r = 0; r < height; r++) {
+            for (int32_t c = 0; c < width; c++) {
+                uint8_t y = fit(y_frame(r, c), 16, 235);
+                uint8_t cb = fit(cb_frame(r / 2, c / 2), 16, 240);
+                uint8_t cr = fit(cr_frame(r / 2, c / 2), 16, 240);
+                vec3b pixel;
+                pixel[0] = static_cast<uint8_t>(std::clamp(1.164 * (y - 16) + 0     * (cb - 128) + 1.596 * (cr - 128), 0.0, 255.0));
+                pixel[1] = static_cast<uint8_t>(std::clamp(1.164 * (y - 16) - 0.392 * (cb - 128) - 0.813 * (cr - 128), 0.0, 255.0));
+                pixel[2] = static_cast<uint8_t>(std::clamp(1.164 * (y - 16) + 2.017 * (cb - 128) + 0     * (cr - 128), 0.0, 255.0));
+                frame(r, c) = pixel;
             }
-            vec3b pixel;
-            pixel[0] = fit(static_cast<uint8_t>(1.164 * (y - 16) + 0     * (cb - 128) + 1.596 * (cr - 128)), 0, 255);
-            pixel[1] = fit(static_cast<uint8_t>(1.164 * (y - 16) - 0.392 * (cb - 128) - 0.813 * (cr - 128)), 0, 255);
-            pixel[2] = fit(static_cast<uint8_t>(1.164 * (y - 16) + 2.017 * (cb - 128) + 0     * (cr - 128)), 0, 255);
-            frame(i / width, i % width) = pixel;
         }
+        // int32_t c_index = 0;
+        // for (int32_t i = 0; i < y_frame.size(); i++) {
+        //     uint8_t y = fit(y_frame(i / width, i % width), 16, 235);
+        //     uint8_t cb = fit(cb_frame(c_index / (width / 2), c_index % (width / 2)), 16, 240);
+        //     uint8_t cr = fit(cr_frame(c_index / (width / 2), c_index % (width / 2)), 16, 240);
+        //     if (i % width == 0) {
+        //         c_index = i / width % 2 == 0 ? c_index : c_index - width / 2;
+        //     } else if (i % 2 != 0) {
+        //         c_index++;
+        //     }
+        //     vec3b pixel;
+        //     pixel[0] = fit(static_cast<uint32_t>(1.164 * (y - 16) + 0     * (cb - 128) + 1.596 * (cr - 128)), 0, 255);
+        //     pixel[1] = fit(static_cast<uint32_t>(1.164 * (y - 16) - 0.392 * (cb - 128) - 0.813 * (cr - 128)), 0, 255);
+        //     pixel[2] = fit(static_cast<uint32_t>(1.164 * (y - 16) + 2.017 * (cb - 128) + 0     * (cr - 128)), 0, 255);
+        //     frame(i / width, i % width) = pixel;
+        // }
         frames.push_back(frame);
     }
     return true;
 }
 
-// void write_pam(const char **argv, std::vector<mat<vec3b> > &frames) {
-//     uint32_t id = 0;
-//     const std::string dir = argv[2];
-//     for (auto &frame: frames) {
-//         std::string string = dir + "/frame_" + std::to_string(id) + ".pam";
-//         std::ofstream output(string, std::ios::binary);
-//         if (!output) {
-//             return;
-//         }
-//         output << "P7\nHEIGHT " << frame.rows() << "\nWIDTH " << frame.cols() <<
-//                 "\nDEPTH 3\nMAXVAL 255\nTUPLTYPE RGB\nENDHDR\n";
-//         for (int32_t r = 0; r < frame.rows(); r++) {
-//             for (int32_t c = 0; c < frame.cols(); c++) {
-//                 for (auto &x: frame(r, c)) {
-//                     output.write(reinterpret_cast<char *>(&x), 1);
-//                 }
-//             }
-//         }
-//         id++;
-//     }
-// }
-//
-// int main(const int argc, const char *argv[]) {
-//     if (argc != 3) {
-//         return EXIT_FAILURE;
-//     }
-//     std::vector<mat<vec3b> > frames;
-//     y4m_extract_color(argv[1], frames);
-//     write_pam(argv, frames);
-//     return EXIT_SUCCESS;
-// }
+void write_pam(const char **argv, std::vector<mat<vec3b> > &frames) {
+    uint32_t id = 0;
+    const std::string dir = argv[2];
+    for (auto &frame: frames) {
+        std::string string = dir + "/frame_" + std::to_string(id) + ".pam";
+        std::ofstream output(string, std::ios::binary);
+        if (!output) {
+            return;
+        }
+        output << "P7\nHEIGHT " << frame.rows() << "\nWIDTH " << frame.cols() <<
+                "\nDEPTH 3\nMAXVAL 255\nTUPLTYPE RGB\nENDHDR\n";
+        for (int32_t r = 0; r < frame.rows(); r++) {
+            for (int32_t c = 0; c < frame.cols(); c++) {
+                for (auto &x: frame(r, c)) {
+                    output.write(reinterpret_cast<char *>(&x), 1);
+                }
+            }
+        }
+        id++;
+    }
+}
+
+int main(const int argc, const char *argv[]) {
+    if (argc != 3) {
+        return EXIT_FAILURE;
+    }
+    std::vector<mat<vec3b> > frames;
+    y4m_extract_color(argv[1], frames);
+    write_pam(argv, frames);
+    return EXIT_SUCCESS;
+}
