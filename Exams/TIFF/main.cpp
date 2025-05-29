@@ -90,15 +90,12 @@ int decode(std::ifstream &input, std::ofstream &output) {
         input.read(reinterpret_cast<char *>(nof), sizeof(nof));
         ifd_position = nof[3] << 24 | nof[2] << 16 | nof[1] << 8 | nof[0];
     }
-
     if (compression != 1 or photometric != 1 or row_strip != height or strip_byte != width * height) {
         return EXIT_FAILURE;
     }
-
     input.seekg(strip_off, std::ios::beg);
     std::vector<uint8_t> pixel(width * height);
     input.read(reinterpret_cast<char *>(pixel.data()), width * height);
-
     write_pam(output, pixel, width, height);
     return EXIT_SUCCESS;
 }
