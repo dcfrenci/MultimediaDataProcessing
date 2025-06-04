@@ -42,6 +42,9 @@ struct element {
 
     [[nodiscard]] std::string get_string(const uint32_t level, const uint64_t position,
                                          const uint64_t content_size) const {
+        // if (name_ == "Void" or name_ == "CRC-32") {
+        //     return "";
+        // }
         std::ostringstream id;
         id << std::hex << id_;
         return std::string(level, '\t') + (type_ == "master" ? "+ " : "| ") + name_ + "(" + type_ +
@@ -57,6 +60,9 @@ struct element {
         //     }
         //     return false;
         // }
+        if (id == 0xBF or id == 0xEC) {
+            return true;
+        }
         return std::any_of(children_.begin(), children_.end(), [&id](const uint32_t d) { return d == id; });
     }
 };
@@ -168,6 +174,7 @@ void analyze(std::ifstream &input, std::ofstream &output, std::unordered_map<uin
 int decoder(std::ifstream &input, std::ofstream &output, std::ifstream &table) {
     std::unordered_map<uint32_t, element> table_map;
     mapping(table, table_map);
+    auto v = table_map.find(0xBF)->second;
     std::vector<uint64_t> m_size;
     std::vector<uint32_t> m_ids;
     std::vector<element> m_elements;
