@@ -50,6 +50,8 @@ add_executable(Lab main.cpp
         Exams/YUV4MPEG2/y4m_color.cpp
         Exams/MDCT/mdct.cpp
         Exams/MKW/main.cpp
+        Exams/16_LZ4/main.cpp
+        Exams/15_FIT/main.cpp
 )
 
 target_link_libraries(Lab PRIVATE stdc++exp)
