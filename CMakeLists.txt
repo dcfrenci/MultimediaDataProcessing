@@ -52,6 +52,9 @@ add_executable(Lab main.cpp
         Exams/MKW/main.cpp
         Exams/16_LZ4/main.cpp
         Exams/15_FIT/main.cpp
+        Exams/17_Bayer_decoder/main.cpp
+        Exams/20_LZVN_decoder/main.cpp
+        Exams/21_Adam7/main.cpp
 )
 
 target_link_libraries(Lab PRIVATE stdc++exp)
